@@ -24,10 +24,12 @@ function startGame() {
 }
 
 function turnClick(square) {
-	if (typeof origBoard[square.target.id] === 'number') {
-		turn(square.target.id, huPlayer);
-		if (!checkTie()) turn(bestSpot(), aiPlayer);
-	}
+	window.setTimeout(function() {
+		if (typeof origBoard[square.target.id] === 'number') {
+			turn(square.target.id, huPlayer);
+			if (!checkTie()) turn(bestSpot(), aiPlayer);
+		}
+	}, 500);
 }
 
 function turn(squareID, player) {
